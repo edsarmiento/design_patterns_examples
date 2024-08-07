@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Shape
   def draw
     raise NotImplementedError, "#{self.class} has not implemented method '#{__method__}'"

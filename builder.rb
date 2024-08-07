@@ -1,61 +1,63 @@
+# frozen_string_literal: true
+
 # Car Deffinition
 class Car
-	attr_accessor :wheels, :doors
+  attr_accessor :wheels, :doors
 
-	def initialize
-		@wheels = nil
-		@doors = nil
-	end
+  def initialize
+    @wheels = nil
+    @doors = nil
+  end
 
-	def show
-		puts "car with #{@doors} doors and a #{@wheels} weel"
-	end
+  def show
+    puts "car with #{@doors} doors and a #{@wheels} weel"
+  end
 end
 
 # Car builder interface
 class CarBuilder
   def build_weels
     raise NotImplementedError, "#{self.class} has not implemented method '#{__method__}'"
-	end
+  end
 
-	def build_doors
+  def build_doors
     raise NotImplementedError, "#{self.class} has not implemented method '#{__method__}'"
-	end
+  end
 end
 
 # Specific Car Builders
 class BasicCarBuilder < CarBuilder
-	def initialize
-		@car = Car.new
-	end
+  def initialize
+    @car = Car.new
+  end
 
-	def build_weels
-		@car.wheels = 'simple'
-	end
-	 
-	def build_doors
-		@car.doors = 'simple'
-	end
+  def build_weels
+    @car.wheels = 'simple'
+  end
 
-	def get_result
+  def build_doors
+    @car.doors = 'simple'
+  end
+
+  def get_result
     @car
   end
 end
 
 class LuxuryCarBuilder < CarBuilder
-	def initialize
-		@car = Car.new
-	end
+  def initialize
+    @car = Car.new
+  end
 
-	def build_weels
-		@car.wheels = 'luxe'
-	end
-	 
-	def build_doors
-		@car.doors = 'luxe'
-	end
+  def build_weels
+    @car.wheels = 'luxe'
+  end
 
-	def get_result
+  def build_doors
+    @car.doors = 'luxe'
+  end
+
+  def get_result
     @car
   end
 end

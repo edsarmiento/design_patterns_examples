@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # DECORATOR
 class Component
   def operation
@@ -35,7 +37,6 @@ class ConcreteDecoratorB < Decorator
     "ConcreteDecoratorB(#{@component.operation})"
   end
 end
-
 
 def client_code(component)
   print "RESULT: #{component.operation}"

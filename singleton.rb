@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
 # SINGLETON
 class MySingleton
   @instance = new
 
   private_class_method :new
 
-  def self.instance
-    @instance
+  class << self
+    attr_reader :instance
   end
 
-  def some_business_logic ; end
+  def some_business_logic; end
 end
 
 s1 = MySingleton.instance
