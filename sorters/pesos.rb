@@ -4,23 +4,22 @@
 
 array = [123,27,151,323,32]
 weights = []
-obj = {}
+obj_aux = {}
+result = []
 
 array.each do |value|
     min_aux = []
     values = value.to_s.split('')
     values.each do |element|
-        min_aux << element.to_i
+      min_aux << element.to_i
     end
 
     weights << min_aux.sum
-    obj[min_aux.sum] = value
+    obj_aux[min_aux.sum] = value
 end
-
-micro_aux = []
 
 weights.sort.each do |value|
-  micro_aux << obj[value]
+  result << obj_aux[value]
 end
 
-puts micro_aux
+print result
