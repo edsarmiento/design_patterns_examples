@@ -10,4 +10,4 @@ def first_factorial(num)
   result
 end
 
-puts first_factorial 5
+puts first_factorial 10
